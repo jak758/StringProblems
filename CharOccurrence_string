@@ -1,0 +1,35 @@
+//Find Number of Occurances of a Characters in a String
+//inputString= Ramananda
+//R=1,a=4,m=1,n=2,d=1
+
+using System;
+public class Program
+{
+	public static void Main()
+	{
+		//string str = "Ramananda";
+		string inpString = Console.ReadLine();
+		Occurrence(inpString);
+	}
+	public static void Occurrence(string str)
+	{
+		while(str.Length > 0)
+		{
+			Console.Write(str[0] + " = ");
+			int count = 0;
+			//using for loop
+			for(int x=0; x < str.Length; x++)
+			{
+				if(str[0] == str[x])
+					count++;
+			}
+			//using foreach
+			//foreach(char c in str) {
+            //	if (str[0] == c)
+			//		count++;
+        	//}
+			Console.WriteLine(count);
+			str = str.Replace(str[0].ToString(), String.Empty);
+		}
+	}
+}
